@@ -83,8 +83,8 @@ public class ListTest extends Assert {
 
     @Test
     public void testPerf() {
-        for (int i = 1; i < 2000; i *= 2) {
-            int n = i * 1000;
+        for (int i = 64; i < 40000; i *= 2) {
+            int n = i * 10000;
             System.out.print(n+"\t");
             List list = new List();
             for (int j = 0; j < n; j++) list.add(userTypeBuilder.create());
@@ -98,7 +98,7 @@ public class ListTest extends Assert {
                 return;
             }
             long end = System.nanoTime();
-            System.out.println((end - start) * 1.0 / 1_000_000);
+            System.out.println((end - start) * 1.0 / 1_000_000_000);
         }
     }
 }
